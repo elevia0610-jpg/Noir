@@ -1,0 +1,859 @@
+/* ABOUTME: Consolidated responsive breakpoints for all project pages
+   ABOUTME: All media queries in one place: 1024px, 960px, 768px, 480px */
+
+/* ============================================
+   1024px - TABLET LANDSCAPE
+   ============================================ */
+@media (max-width: 1024px) {
+    .project-title-centered {
+        font-size: clamp(16vw, 20vw, 24vw);
+    }
+
+    .insta-posts-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+
+    /* Trail Relay social items */
+    .trail-relay-social-item-2 {
+        transform: translateY(2rem);
+    }
+
+    .trail-relay-social-item-3 {
+        transform: translateY(4rem);
+    }
+
+    /* Logos containers */
+    .beke-logos-container,
+    .pajtas-logos-container {
+        gap: 1rem;
+    }
+
+    .beke-post {
+        width: clamp(120px, 20vw, 180px);
+    }
+}
+
+/* ============================================
+   960px - TABLET PORTRAIT
+   ============================================ */
+@media (max-width: 960px) {
+    /* Brand details - stack vertically */
+    .brand-details-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .brand-colors-patterns {
+        grid-column: 1;
+        padding-right: 1em;
+    }
+
+    .brand-typography {
+        grid-column: 1;
+        padding-left: 1em;
+    }
+
+    /* Next project section */
+    .next-project-next {
+        font-size: 10vw;
+    }
+
+    .next-project-main {
+        font-size: 20vw;
+    }
+
+    .next-project-badge {
+        width: 160px;
+        height: 160px;
+    }
+
+    .next-project-badge-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* Gallery text */
+    .gallery-paragraph {
+        font-size: 2.5vw;
+    }
+}
+
+/* ============================================
+   768px - MOBILE LANDSCAPE / SMALL TABLET
+   ============================================ */
+@media (max-width: 768px) {
+    /* Project gallery spacing */
+    .project-gallery {
+        --sp-section: clamp(3rem, 5vh, 4rem);
+    }
+
+    /* Scroll container */
+    .project-scroll-container {
+        height: 170vh;
+    }
+
+    .project-hero {
+        justify-content: center;
+        height: 110vh;
+    }
+
+    .project-description {
+        height: 60vh;
+        grid-template-columns: 1fr;
+        padding: 0 2em;
+    }
+
+    .project-title-group {
+        margin-top: -15vh;
+        text-align: center;
+    }
+
+    .project-title-centered {
+        text-align: center;
+        white-space: normal;
+        word-spacing: 100vw;
+    }
+
+    .project-tagline {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .project-title {
+        font-size: 12vw;
+        white-space: normal;
+        padding: 0 1em;
+    }
+
+    .project-title.project-title-centered {
+        font-size: clamp(24vw, 28vw, 32vw);
+        word-spacing: normal;
+        padding: 0;
+    }
+
+    .project-description-title {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .project-description-col-1,
+    .project-description-col-2 {
+        grid-column: 1;
+        margin-top: 2rem;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        font-size: clamp(1.5rem, 5vw, 2.2rem);
+        text-align: left;
+        padding-left: 0;
+    }
+
+    /* Smiley */
+    .smiley-gallery-center {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    /* Gallery rows */
+    .gallery-row {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1em;
+        gap: var(--sp-section);
+    }
+
+    .gallery-row-full {
+        padding: 0 1em;
+    }
+
+    .gallery-row-single.single-left > .gallery-media,
+    .gallery-row-single.single-right > .gallery-media {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .gallery-row-single .gallery-img-natural {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .gallery-row-paired {
+        flex-direction: column;
+        gap: var(--sp-section);
+    }
+
+    .gallery-row-paired .gallery-media-left,
+    .gallery-row-paired .gallery-media-right {
+        width: 100%;
+    }
+
+    .gallery-row-text {
+        display: block;
+        padding: 0 1em;
+    }
+
+    .gallery-row-text .gallery-text-block {
+        grid-column: 1 / -1;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .gallery-row-text.text-left .gallery-text-block {
+        padding-left: 0;
+    }
+
+    .gallery-row-image-text {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-row-image-text .gallery-image-col,
+    .gallery-row-image-text .gallery-text-col {
+        grid-column: 1 / -1;
+    }
+
+    .gallery-row-twin-centered {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-row-twin-centered .gallery-twin-item:first-child,
+    .gallery-row-twin-centered .gallery-twin-item:last-child {
+        grid-column: span 1;
+    }
+
+    /* Gallery media */
+    .gallery-media {
+        aspect-ratio: 4 / 5;
+    }
+
+    .gallery-media-landscape {
+        aspect-ratio: 16 / 10;
+    }
+
+    /* Gallery text */
+    .gallery-label {
+        font-size: 0.6rem;
+    }
+
+    .gallery-paragraph {
+        font-size: clamp(1rem, 3.5vw, 1.3rem);
+    }
+
+    /* Poster row - stack */
+    .gallery-poster-row {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: var(--sp-section);
+    }
+
+    .gallery-poster-row img {
+        flex: none;
+        width: 100%;
+    }
+
+    /* Staff cards */
+    .staff-cards-container {
+        height: 60vh;
+        min-height: 350px;
+        align-items: flex-start;
+        padding-top: 4rem;
+    }
+
+    .staff-card {
+        height: 70%;
+    }
+
+    /* Instagram */
+    .insta-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+
+    .insta-posts-row {
+        padding: 3rem 0;
+    }
+
+    /* Brand hero */
+    .brand-hero-image {
+        height: 50vh;
+    }
+
+    .brand-hero-logo {
+        width: 40vw;
+    }
+
+    /* Brand details */
+    .brand-details-section {
+        padding: 0 1em;
+    }
+
+    /* Brand colors */
+    .brand-colors-patterns {
+        padding: 0;
+    }
+
+    .brand-color-row {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+
+    .brand-color-swatch {
+        height: 80px;
+    }
+
+    .brand-pattern {
+        height: 80px;
+    }
+
+    .brand-color-name {
+        font-size: 1rem;
+    }
+
+    /* Horizontal color rows - wrap on mobile */
+    .brand-color-rows-horizontal {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .brand-color-row-horizontal {
+        flex: 1 1 30%;
+        height: 100px;
+    }
+
+    /* Typography */
+    .typography-samples {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .typography-preview {
+        font-size: clamp(4rem, 15vw, 6rem);
+    }
+
+    /* Brand colors/patterns - reset padding */
+    .brand-colors-patterns,
+    .brand-typography {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Next project - keep side by side, just smaller badge */
+    .next-project-badge {
+        width: 120px;
+        height: 120px;
+    }
+
+    .next-project-badge-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .next-project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .next-project-card-image {
+        height: 35vh;
+    }
+
+    .next-project-card-info {
+        padding: 0.75em 1em;
+    }
+
+    .next-project-card-title {
+        font-size: clamp(3rem, 12vw, 5rem);
+    }
+
+    .next-project-card-subtitle {
+        display: none;
+    }
+
+    .next-project-card-badge {
+        width: 100px;
+        height: 100px;
+    }
+
+    .next-project-title {
+        font-size: clamp(2.5rem, 10vw, 5rem);
+    }
+
+    /* Live site badge */
+    .live-site-badge {
+        width: 90px;
+        height: 90px;
+    }
+
+    .live-site-badge-text text {
+        font-size: 9px;
+    }
+
+    .live-site-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    /* Béke */
+    .beke-logos-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .beke-logo-item img {
+        width: calc(100vw - 2em);
+        max-width: none;
+    }
+
+    .beke-post {
+        width: clamp(100px, 25vw, 150px);
+    }
+
+    .beke-marquee-left .beke-marquee-track,
+    .beke-marquee-right .beke-marquee-track {
+        animation-duration: 40s;
+    }
+
+    .beke-fluid-logo-section {
+        padding: 4rem 1em;
+        min-height: 40vh;
+    }
+
+    /* Trail Relay */
+    .trail-relay-social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trail-relay-social-item {
+        grid-column: span 1;
+    }
+
+    .trail-relay-social-item-1 {
+        grid-column: span 1;
+    }
+
+    .trail-relay-social-item-1,
+    .trail-relay-social-item-2,
+    .trail-relay-social-item-3 {
+        transform: translateY(0);
+    }
+
+    .trail-relay-logo-hero {
+        height: 30vh;
+    }
+
+    .trail-relay-logo-main {
+        max-width: 70%;
+    }
+
+    .project-description-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-description-gallery .project-description-col-1,
+    .project-description-gallery .project-description-col-2 {
+        grid-column: 1;
+    }
+
+    /* Pajtás Napok */
+    .pajtas-logos-section .brand-section-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .pajtas-logos-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .pajtas-logos-two .pajtas-logo-item {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .pajtas-logos-two .pajtas-logo-item img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+
+    .pajtas-logos-container.pajtas-logos-two {
+        padding-bottom: 0;
+    }
+
+    .pajtas-logo-draft-row {
+        width: 100%;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .pajtas-logo-draft {
+        flex: 0 1 auto;
+        width: 100%;
+    }
+
+    .pajtas-logo-item img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Pajtás color rows */
+    .pajtas-color-row {
+        flex: 1 1 40%;
+        height: 80px;
+    }
+
+    /* Artifex */
+    .artifex-brand-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .artifex-showcase-item {
+        width: 100%;
+    }
+
+    .artifex-showcase-item:nth-child(even) {
+        align-self: flex-start;
+    }
+
+    .artifex-paired-gallery {
+        flex-direction: column;
+        gap: var(--sp-section);
+    }
+
+    .artifex-paired-column {
+        gap: var(--sp-section);
+    }
+
+    .artifex-paired-column:last-child {
+        margin-top: 0;
+    }
+
+    .artifex-paired-item {
+        padding: 0.75rem;
+        border-radius: 8px;
+    }
+
+    .artifex-paired-item img {
+        border-radius: 6px;
+    }
+
+    .artifex-my-fonts-row {
+        grid-template-columns: 1fr;
+    }
+
+    .artifex-my-fonts-item,
+    .artifex-my-fonts-item-left {
+        grid-column: 1;
+    }
+
+    .artifex-page .artifex-my-fonts-item {
+        margin: 0 1em;
+    }
+
+    .artifex-publication-row {
+        grid-template-columns: 1fr;
+        gap: var(--sp-section);
+    }
+
+    .artifex-publication-item {
+        grid-column: 1;
+        padding: 0 1em;
+    }
+
+    .artifex-publication-item-left {
+        padding: 0 1em;
+    }
+
+    /* Várlak */
+    .varlak-preview {
+        height: 50vh;
+    }
+
+    .varlak-preview-logo {
+        width: 140px;
+    }
+
+    .varlak-preview-year {
+        font-size: 7rem;
+    }
+
+    .varlak-preview-pills {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .varlak-preview-pill {
+        font-size: 1rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .varlak-preview-badge {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* University Portfolio */
+    .university-paired-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .university-paired-item {
+        grid-column: span 1;
+    }
+
+    .university-paired-left,
+    .university-paired-right {
+        grid-column: span 1;
+        transform: translateY(0);
+    }
+
+    /* Hide custom cursor on mobile */
+    .custom-cursor {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   480px - MOBILE PORTRAIT
+   ============================================ */
+@media (max-width: 480px) {
+    .project-hero {
+        justify-content: center;
+    }
+
+    .project-title-group {
+        padding: 2rem 1rem;
+        margin-top: -15vh;
+    }
+
+    .project-description {
+        height: auto;
+        min-height: 80vh;
+        padding: 4rem 1em;
+    }
+
+    .project-description-title {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        margin-bottom: 2rem;
+    }
+
+    .gallery-paragraph {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+    }
+
+    .gallery-heading {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    .brand-section-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .typography-preview {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+
+    .next-project-next {
+        font-size: 12vw;
+    }
+
+    .next-project-main {
+        font-size: 22vw;
+    }
+
+    .next-project-badge {
+        width: 100px;
+        height: 100px;
+    }
+
+    .next-project-badge-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .next-project-card-badge {
+        width: 60px;
+        height: 60px;
+    }
+
+    .live-site-badge {
+        width: 85px;
+        height: 85px;
+    }
+
+    .live-site-icon {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ============================================
+   LIGHT MODE STYLES
+   ============================================ */
+
+[data-theme="light"] .project-page {
+    background-color: var(--soft-beige);
+}
+
+[data-theme="light"] .project-page .grid-background .line {
+    background-color: rgba(67, 48, 46, 0.12);
+}
+
+[data-theme="light"] .project-header .logo {
+    color: var(--black);
+}
+
+[data-theme="light"] .project-header .logo-line {
+    background: rgba(230, 225, 221, 0.35);
+}
+
+[data-theme="light"] .project-header .menu-btn {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+[data-theme="light"] .project-description-title,
+[data-theme="light"] .gallery-paragraph,
+[data-theme="light"] .gallery-label,
+[data-theme="light"] .gallery-heading,
+[data-theme="light"] .brand-section-title,
+[data-theme="light"] .typography-preview,
+[data-theme="light"] .typography-name,
+[data-theme="light"] .typography-usage,
+[data-theme="light"] .next-project-next,
+[data-theme="light"] .next-project-main,
+[data-theme="light"] .gallery-text-title {
+    color: var(--black);
+}
+
+[data-theme="light"] .gallery-paragraph.text-highlight {
+    color: var(--dark-beige);
+}
+
+[data-theme="light"] .gallery-paragraph.text-highlight strong {
+    color: var(--black);
+    font-weight: 500;
+}
+
+/* Next project badge - inverted */
+[data-theme="light"] .next-project-badge-bg {
+    background-color: var(--black);
+}
+
+[data-theme="light"] .next-project-badge-text text {
+    fill: var(--soft-beige);
+}
+
+[data-theme="light"] .next-project-badge-icon {
+    filter: invert(0);
+}
+
+/* Live site badge - inverted */
+[data-theme="light"] .live-site-badge-bg {
+    background-color: var(--black);
+}
+
+[data-theme="light"] .live-site-badge-text text {
+    fill: var(--soft-beige);
+}
+
+[data-theme="light"] .live-site-globe {
+    stroke: var(--soft-beige);
+}
+
+[data-theme="light"] .live-site-link {
+    fill: var(--soft-beige);
+}
+
+/* Contact section - light mode */
+[data-theme="light"] .project-page .contact-section {
+    background-color: var(--soft-beige);
+}
+
+[data-theme="light"] .project-page .contact-title,
+[data-theme="light"] .project-page .contact-cta-label,
+[data-theme="light"] .project-page .contact-email,
+[data-theme="light"] .project-page .contact-social-link {
+    color: var(--black);
+}
+
+[data-theme="light"] .project-page .contact-exit-word {
+    color: var(--soft-beige);
+    background-color: var(--black);
+}
+
+[data-theme="light"] .project-page .contact-marquee-wrapper {
+    background-color: var(--soft-beige);
+}
+
+[data-theme="light"] .project-page .contact-marquee-text {
+    color: var(--black);
+}
+
+/* Contact star icon */
+[data-theme="dark"] .project-page .contact-star {
+    filter: none;
+}
+
+[data-theme="light"] .project-page .contact-star {
+    filter: invert(1);
+}
+
+/* Door */
+[data-theme="light"] .project-page .contact-door-closed {
+    filter: invert(1) brightness(0.1);
+}
+
+[data-theme="light"] .project-page .contact-door-frame > rect {
+    fill: var(--soft-beige);
+}
+
+[data-theme="light"] .project-page .contact-door-frame > path {
+    fill: var(--black);
+}
+
+/* Paired items borders */
+[data-theme="light"] .artifex-paired-item,
+[data-theme="light"] .university-paired-item {
+    border-color: rgba(26, 26, 26, 0.3);
+}
+
+/* System preference detection */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .project-page {
+        background-color: var(--soft-beige);
+    }
+
+    :root:not([data-theme="dark"]) .project-page .grid-background .line {
+        background-color: rgba(67, 48, 46, 0.12);
+    }
+
+    :root:not([data-theme="dark"]) .project-header .logo {
+        color: var(--black);
+    }
+
+    :root:not([data-theme="dark"]) .project-description-title,
+    :root:not([data-theme="dark"]) .gallery-paragraph,
+    :root:not([data-theme="dark"]) .gallery-label,
+    :root:not([data-theme="dark"]) .gallery-heading,
+    :root:not([data-theme="dark"]) .brand-section-title,
+    :root:not([data-theme="dark"]) .typography-preview,
+    :root:not([data-theme="dark"]) .typography-name,
+    :root:not([data-theme="dark"]) .typography-usage,
+    :root:not([data-theme="dark"]) .next-project-next,
+    :root:not([data-theme="dark"]) .next-project-main,
+    :root:not([data-theme="dark"]) .gallery-text-title {
+        color: var(--black);
+    }
+
+    :root:not([data-theme="dark"]) .gallery-paragraph.text-highlight {
+        color: var(--dark-beige);
+    }
+
+    :root:not([data-theme="dark"]) .gallery-paragraph.text-highlight strong {
+        color: var(--black);
+        font-weight: 500;
+    }
+}

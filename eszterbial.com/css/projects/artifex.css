@@ -1,0 +1,250 @@
+/* ABOUTME: Artifex project-specific styles
+   ABOUTME: Brand row, paired gallery, showcase items, publication layout */
+
+/* Background image */
+.artifex-bg-image {
+    background-image: url('https://media.eszterbial.com/img/works/artifex/artifex-in-use.jpg');
+}
+
+/* ============================================
+   BRAND SECTION
+   ============================================ */
+
+.artifex-brand-section {
+    padding: 0 1em;
+}
+
+.artifex-brand-row {
+    display: flex;
+    gap: 3rem;
+    align-items: stretch;
+}
+
+/* Logo Section */
+.artifex-logo-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.artifex-logo-container {
+    padding: 1rem 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.artifex-logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Logo Animation */
+.artifex-logo-animation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.artifex-logo-animation-container {
+    padding: 1rem 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.artifex-logo-animation-container video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* ============================================
+   SHOWCASE ROW - Half-width alternating
+   ============================================ */
+
+.artifex-showcase-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1em;
+    margin-bottom: var(--sp-section);
+}
+
+.artifex-showcase-item {
+    width: 50%;
+}
+
+.artifex-showcase-item:nth-child(even) {
+    align-self: flex-end;
+}
+
+.artifex-showcase-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Page-specific styling */
+.artifex-page .artifex-showcase-item {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 0.5rem;
+}
+
+.artifex-page .artifex-showcase-item img {
+    border-radius: 8px;
+}
+
+/* ============================================
+   MY FONTS ROW - 8-column grid
+   ============================================ */
+
+.artifex-my-fonts-row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-bottom: var(--sp-section);
+}
+
+.artifex-my-fonts-item {
+    grid-column: 5 / 9;
+    padding: 0 1em;
+}
+
+.artifex-my-fonts-item-left {
+    grid-column: 1 / 5;
+}
+
+.artifex-my-fonts-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.artifex-page .artifex-my-fonts-item {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin: 0 1em;
+}
+
+.artifex-page .artifex-my-fonts-item img {
+    border-radius: 8px;
+}
+
+/* ============================================
+   PUBLICATION ROW - 8-column grid
+   ============================================ */
+
+.artifex-publication-row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-bottom: var(--sp-section);
+}
+
+.artifex-publication-item {
+    grid-column: span 4;
+}
+
+.artifex-publication-item-left {
+    padding: 0 1em;
+}
+
+.artifex-publication-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================
+   PAIRED GALLERY - Two column masonry
+   ============================================ */
+
+.artifex-paired-gallery {
+    display: flex;
+    gap: 2rem;
+    padding: 0 1em;
+    margin-bottom: var(--sp-section);
+}
+
+.artifex-paired-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.artifex-paired-column:last-child {
+    margin-top: 6rem;
+}
+
+.artifex-paired-item {
+    will-change: transform;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 0.5rem;
+}
+
+.artifex-paired-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ============================================
+   FULL IMAGE & VIDEO
+   ============================================ */
+
+.artifex-full-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.artifex-promo-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Landing page parallax */
+.artifex-landing-parallax {
+    overflow: hidden;
+}
+
+.artifex-landing-parallax img {
+    width: 100%;
+    height: auto;
+    display: block;
+    will-change: transform;
+}
+
+/* ============================================
+   PAGE-SPECIFIC SPACING & OVERFLOW
+   ============================================ */
+
+.artifex-page .gallery-row-text + .gallery-row {
+    margin-top: calc(var(--sp-section) * 0.5);
+}
+
+.artifex-page .artifex-paired-gallery + .gallery-row-text {
+    position: relative;
+    z-index: 30;
+    margin-top: calc(var(--sp-section) * 1.5);
+}
+
+.artifex-page .artifex-paired-gallery {
+    overflow: hidden;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    margin-top: calc(var(--sp-section) * -0.5);
+    margin-bottom: 0;
+}
+
+.artifex-page .gallery-row {
+    overflow: hidden;
+}

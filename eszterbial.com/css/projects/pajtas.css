@@ -1,0 +1,161 @@
+/* ABOUTME: Pajtás Napok project-specific styles
+   ABOUTME: Logo variations, horizontal color rows, custom brand layout */
+
+/* Background image */
+.pajtas-bg-image {
+    background-image: url('https://media.eszterbial.com/img/works/pajtas-napok/poster-in-use.jpg');
+}
+
+/* ============================================
+   LOGOS SECTION
+   ============================================ */
+
+.pajtas-logos-section {
+    padding: 0 1em;
+    margin-bottom: 5rem;
+}
+
+.pajtas-logos-section .brand-section-title {
+    margin-bottom: 0;
+}
+
+.pajtas-logos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    width: 100%;
+}
+
+.pajtas-logos-two {
+    gap: 1rem;
+}
+
+.pajtas-logos-two .pajtas-logo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 16 / 9;
+    padding: 2rem;
+}
+
+.pajtas-logos-two .pajtas-logo-item img {
+    max-width: 70%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.pajtas-logo-draft-row {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.pajtas-logo-item {
+    flex: 1 1 0;
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pajtas-logo-item.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.pajtas-logo-item:nth-child(1) { transition-delay: 0s; }
+.pajtas-logo-item:nth-child(2) { transition-delay: 0.15s; }
+.pajtas-logo-item:nth-child(3) { transition-delay: 0.3s; }
+
+.pajtas-logo-draft {
+    flex: none;
+    width: 100%;
+    transition-delay: 0.45s;
+}
+
+.pajtas-logo-item img {
+    height: auto;
+    width: 100%;
+}
+
+/* ============================================
+   BRAND DETAILS - Side by side layout
+   ============================================ */
+
+.pajtas-napok-brand-details {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 0 1em;
+}
+
+.pajtas-napok-brand-colors {
+    flex: 3;
+}
+
+.pajtas-napok-typography {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .pajtas-napok-brand-details {
+        flex-direction: column;
+    }
+
+    .pajtas-napok-brand-colors,
+    .pajtas-napok-typography {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* ============================================
+   COLOR ROWS - Horizontal swatches
+   ============================================ */
+
+.brand-color-rows.pajtas-color-rows {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    height: 200px;
+}
+
+.brand-color-row.pajtas-color-row {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+}
+
+.pajtas-color-row .brand-color-swatch {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+
+.pajtas-color-row .brand-color-hex {
+    font-size: 0.7rem;
+}
+
+/* ============================================
+   TYPOGRAPHY - Single column
+   ============================================ */
+
+.pajtas-typography {
+    grid-template-columns: 1fr;
+}
+
+/* ============================================
+   PAGE-SPECIFIC SPACING
+   ============================================ */
+
+.pajtas-napok-page .gallery-row-full {
+    margin-bottom: var(--sp-section);
+}

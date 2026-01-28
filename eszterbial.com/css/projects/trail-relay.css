@@ -1,0 +1,146 @@
+/* ABOUTME: Trail Relay project-specific styles
+   ABOUTME: Logo hero, social grid, horizontal color rows */
+
+/* Background image */
+.trail-relay-bg-image {
+    background-image: url('https://media.eszterbial.com/img/project-cover-imgs/trail-relay-cover-img.jpg');
+}
+
+/* ============================================
+   BRAND DETAILS WRAPPER
+   ============================================ */
+
+.trail-relay-brand-details {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 0 1em;
+}
+
+.trail-relay-brand-colors,
+.trail-relay-brand-typography {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .trail-relay-brand-details {
+        flex-direction: column;
+    }
+}
+
+/* ============================================
+   COLOR ROWS - Horizontal swatches
+   ============================================ */
+
+.brand-color-rows.trail-relay-color-rows {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    height: 200px;
+}
+
+.brand-color-row.trail-relay-color-row {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+}
+
+.trail-relay-color-row .brand-color-swatch {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+
+.trail-relay-color-row .brand-color-hex {
+    font-size: 0.7rem;
+}
+
+/* ============================================
+   TYPOGRAPHY - Single column
+   ============================================ */
+
+.trail-relay-typography {
+    grid-template-columns: 1fr;
+}
+
+/* ============================================
+   SOCIAL MEDIA SECTION
+   ============================================ */
+
+.trail-relay-social-section {
+    padding: 0;
+}
+
+.trail-relay-social-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+}
+
+.trail-relay-social-item {
+    grid-column: span 2;
+    padding: 0 1em;
+}
+
+.trail-relay-social-item-1 {
+    grid-column: 2 / span 2;
+}
+
+.trail-relay-social-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Vertical offset for staggered effect */
+.trail-relay-social-item-1 {
+    transform: translateY(0);
+}
+
+.trail-relay-social-item-2 {
+    transform: translateY(3rem);
+}
+
+.trail-relay-social-item-3 {
+    transform: translateY(6rem);
+}
+
+/* ============================================
+   LOGO HERO
+   ============================================ */
+
+.trail-relay-logo-hero {
+    position: relative;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 1em var(--sp-section) 1em;
+    background: linear-gradient(135deg, #F9EFDB 0%, #EBD9B4 20%, #9DBC98 40%, #71B8BA 60%, #F9B572 80%, #3B5253 100%);
+}
+
+.trail-relay-logo-watermark {
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    object-fit: contain;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.trail-relay-logo-main {
+    position: relative;
+    z-index: 1;
+    max-width: 50%;
+    max-height: 60%;
+    width: auto;
+    height: auto;
+}

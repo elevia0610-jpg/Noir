@@ -1,0 +1,46 @@
+/* ABOUTME: Main project styles - imports all modular CSS files
+   ABOUTME: Organized into base, gallery, components, responsive, and project-specific styles */
+
+/* ============================================
+   CORE STYLES
+   ============================================ */
+
+/* Base layout, hero, scroll container, contact */
+@import url('../project-base.css');
+
+/* Gallery grid system and media containers */
+@import url('../project-gallery.css');
+
+/* Reusable components: badges, brand identity, typography, cards */
+@import url('../project-components.css');
+
+/* ============================================
+   PROJECT-SPECIFIC STYLES
+   ============================================ */
+
+/* Béke Fesztivál */
+@import url('../projects/beke.css');
+
+/* Trail Relay */
+@import url('../projects/trail-relay.css');
+
+/* Pajtás Napok */
+@import url('../projects/pajtas.css');
+
+/* Artifex */
+@import url('../projects/artifex.css');
+
+/* Várlak Fesztivál */
+@import url('../projects/varlak.css');
+
+/* University Portfolio Site */
+@import url('../projects/university.css');
+
+/* BP Data */
+@import url('../projects/bpdata.css');
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   Must be last to override all styles
+   ============================================ */
+@import url('../project-responsive.css');

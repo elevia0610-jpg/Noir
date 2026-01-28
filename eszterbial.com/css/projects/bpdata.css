@@ -1,0 +1,7 @@
+/* ABOUTME: BP Data project-specific styles
+   ABOUTME: Background image only - uses shared components */
+
+/* Background image */
+.bpdata-bg-image {
+    background-image: url('https://media.eszterbial.com/img/works/bpdata/bpdata-in-use-4.jpg');
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script src="js/analytics.js"></script>
+    <script>
+        (function() {
+            var pageTheme = 'light';
+            document.documentElement.setAttribute('data-theme', pageTheme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Eszter Bial</title>
+    <meta name="description" content="Contact Eszter Bial for collaboration.">
+    <link rel="canonical" href="https://eszterbial.com/contact.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eszterbial.com/contact.html">
+    <meta property="og:title" content="Contact - Eszter Bial">
+    <meta property="og:description" content="Contact Eszter Bial for collaboration.">
+    <meta property="og:image" content="https://media.eszterbial.com/img/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact - Eszter Bial">
+    <meta name="twitter:description" content="Contact Eszter Bial for collaboration.">
+    <meta name="twitter:image" content="https://media.eszterbial.com/img/og-image.jpg">
+
+    <link rel="icon" type="image/png" href="assets/image/custom-cursor1.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    </noscript>
+</head>
+<body class="contact-page">
+    <div class="loader">
+        <div class="loader-col"></div>
+        <div class="loader-col"></div>
+        <div class="loader-col"></div>
+        <div class="loader-col"></div>
+        <div class="loader-col"></div>
+        <div class="loader-col"></div>
+        <div class="loader-col"></div>
+        <div class="loader-col"></div>
+        <div class="loader-content">
+            <div class="loader-counter">0%</div>
+        </div>
+    </div>
+
+    <!-- <div class="grid-background">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div> -->
+
+    <header class="site-header">
+        <div class="logo">
+            <!-- Logo content injected by logo.js -->
+        </div>
+        <div class="menu-container">
+            <!-- Menu content injected by menu.js -->
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+            <div class="contact-main">
+                <h2 class="contact-title" style="font-family: var(--font-display); text-transform: none; width: 100%; text-align: left; padding-left: 5vw;">
+                    <span class="contact-title-line">CONTACT US</span>
+                    <!-- <span class="contact-title-line">US</span> -->
+                </h2>
+                
+                <div class="contact-grid-wrapper">
+                    <div class="contact-info-left">
+                        <div class="contact-info-item">
+                            <a href="mailto:email@example.com">email@example.com</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <a href="tel:5555555555">(555) 555-55555</a>
+                        </div>
+                        <div class="contact-info-item">
+                            123 Demo Street<br>New York, NY 12345
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label class="main-label">Name (required)</label>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name" class="sub-label">First Name</label>
+                                        <input type="text" id="first-name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name" class="sub-label">Last Name</label>
+                                        <input type="text" id="last-name" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email (required)</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message (required)</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn" style="margin-bottom: 90px;">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/logo.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const firstName = document.getElementById("first-name").value;
+    const lastName = document.getElementById("last-name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const fullName = firstName + " " + lastName;
+
+    try {
+        const res = await fetch("http://localhost:5000/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: fullName,
+                email: email,
+                message: message
+            })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+            alert("Message sent successfully!");
+            document.getElementById("contactForm").reset();
+        } else {
+            alert("Failed to send message.");
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert("Server error. Try again later.");
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* ABOUTME: Várlak Fesztivál project-specific styles
+   ABOUTME: 2026 website preview with pattern, pills, sticker trail */
+
+/* ============================================
+   BRAND DETAILS WRAPPER
+   ============================================ */
+
+.varlak-fesztival-brand-details {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1em;
+    gap: 2rem;
+}
+
+.varlak-fesztival-brand-details .brand-colors-patterns,
+.varlak-fesztival-brand-details .brand-typography {
+    flex: 1;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .varlak-fesztival-brand-details {
+        flex-direction: column;
+    }
+}
+
+/* Background image */
+.varlak-bg-image {
+    background-image: url('https://media.eszterbial.com/img/project-cover-imgs/varlak-cover-img.jpg');
+}
+
+/* ============================================
+   2026 WEBSITE PREVIEW
+   ============================================ */
+
+.varlak-preview-row {
+    padding: 0 1em;
+    margin-top: var(--sp-section);
+}
+
+.varlak-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #fe3636;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+/* Pattern overlay */
+.varlak-preview-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    pointer-events: none;
+    opacity: 0.45;
+    mask-image: linear-gradient(to bottom, black 0%, black 66%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 66%, transparent 100%);
+}
+
+.varlak-preview-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Content */
+.varlak-preview-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.varlak-preview-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: -1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.varlak-preview-year {
+    font-family: 'Mango Grotesque', var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: 12rem;
+    color: white;
+    line-height: 1;
+    margin: 0;
+}
+
+/* Pills */
+.varlak-preview-pills {
+    display: flex;
+    gap: 0;
+    margin-top: -3rem;
+    z-index: 2;
+}
+
+.varlak-preview-pill {
+    font-family: var(--font-geist), sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #201dfc;
+    padding: 0.4rem 1.2rem;
+    border-radius: 100rem;
+    text-transform: uppercase;
+}
+
+/* Stickers */
+.varlak-preview-stickers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.varlak-preview-trail-image {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    border-radius: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform, opacity, left, top;
+}
+
+/* Badge */
+.varlak-preview-badge {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.varlak-preview-badge:hover {
+    transform: scale(1.1);
+}
+
+.varlak-preview-badge .live-site-badge-bg {
+    background-color: var(--black);
+}
+
+.varlak-preview-badge .live-site-badge-text text {
+    fill: white;
+}
+
+.varlak-preview-badge .live-site-globe {
+    stroke: white;
+}
+
+.varlak-preview-badge .live-site-link {
+    fill: white;
+}
+
+.varlak-preview-badge:hover .live-site-globe {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.varlak-preview-badge:hover .live-site-link {
+    opacity: 1;
+    transform: scale(1);
+}

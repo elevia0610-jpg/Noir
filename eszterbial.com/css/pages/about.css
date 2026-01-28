@@ -1,0 +1,650 @@
+/* ABOUTME: Styles for the about page with dark background theme */
+
+/* ABOUTME: Hero image split animation and content sections */
+
+/* Dark theme overrides for about page */
+
+.about-page {
+    background-color: var(--black);
+    color: var(--soft-beige);
+}
+
+.about-page .logo {
+    color: var(--soft-beige);
+}
+
+.about-page .logo-line {
+    background: rgba(26, 26, 26, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.about-page .menu-btn {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.about-page .menu-card {
+    background-color: var(--white);
+}
+
+.about-page .menu-link {
+    color: var(--black);
+}
+
+.about-page .menu-separator {
+    background-color: var(--black);
+}
+
+.about-page .social-link {
+    color: var(--black);
+}
+
+.about-page .menu-close-btn svg path {
+    stroke: var(--black);
+}
+
+/* Cursor hover bubble */
+
+.cursor-bubble {
+    position: fixed;
+    font-family: var(--font-geist);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--black);
+    background-color: var(--violet);
+    border-radius: 8px;
+    padding: 0.25em 0.75em;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10001;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(-10deg);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cursor-bubble.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
+/* Grid lines for dark background */
+
+.about-page .grid-background .line {
+    background-color: rgba(230, 225, 221, 0.1);
+}
+
+/* About Hero Section */
+
+.about-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.about-hero-title {
+    position: absolute;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20vw;
+    text-transform: uppercase;
+    color: var(--soft-beige);
+    line-height: 0.85;
+    z-index: 3;
+    pointer-events: none;
+    top: 75%;
+    transform: translateY(-50%);
+}
+
+.about-hero-images {
+    position: relative;
+    width: 50vw;
+    max-width: 600px;
+    aspect-ratio: 3 / 4;
+}
+
+.about-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.about-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-hero-image-1 {
+    z-index: 2;
+}
+
+.about-hero-image-2 {
+    z-index: 1;
+}
+
+/* Bubble annotation */
+
+.about-hero-bubble {
+    position: absolute;
+    bottom: 15%;
+    right: -20rem;
+    font-family: var(--font-geist);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--soft-beige);
+    background-color: transparent;
+    border: 1px solid var(--soft-beige);
+    border-radius: 8px;
+    padding: 0.25em 0.75em;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-hero-bubble.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About Intro Section - matches index.html about-me style */
+
+.about-intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    text-align: center;
+}
+
+.about-intro-text {
+    font-family: var(--font-geist);
+    font-size: clamp(1.6rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    width: 70%;
+    color: var(--soft-beige);
+    margin: 0;
+}
+
+.about-intro-text-second {
+    margin-top: 3rem;
+}
+
+/* About Me Details - Photo and Description */
+
+.about-me-details {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0;
+    width: 100%;
+    margin-top: 16rem;
+}
+
+.about-me-photo {
+    grid-column: 2 / 4;
+    overflow: hidden;
+}
+
+.about-me-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-me-info {
+    grid-column: 4 / 8;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-me-description {
+    font-family: var(--font-geist);
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--muted-beige);
+    margin: 0;
+    padding: 0 1em;
+}
+
+.about-me-description strong {
+    color: var(--soft-beige);
+    font-weight: 500;
+}
+
+.download-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    font-family: var(--font-geist);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--soft-beige);
+    background-color: transparent;
+    border: 1px solid var(--soft-beige);
+    border-radius: 10px;
+    padding: 0.5em 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0 1.5em;
+    align-self: flex-start;
+}
+
+.download-cv-btn::after {
+    content: '↓';
+}
+
+.download-cv-btn:hover {
+    background-color: var(--soft-beige);
+    color: var(--black);
+}
+
+/* About Skills Section */
+
+.about-skills {
+    padding: 0;
+    text-align: left;
+}
+
+/* Override contact marquee positioning for about page */
+
+.about-page .contact-marquee-wrapper {
+    margin-top: 5rem;
+}
+
+/* Contact section dark theme overrides */
+
+.about-page .contact-marquee-text {
+    color: var(--soft-beige);
+}
+
+.about-page .contact-logo {
+    color: var(--soft-beige);
+}
+
+.about-page .contact-availability {
+    color: var(--soft-beige);
+}
+
+.about-page .contact-title {
+    color: var(--soft-beige);
+}
+
+.about-page .contact-cta-label {
+    color: var(--soft-beige);
+}
+
+.about-page .contact-email {
+    color: var(--soft-beige);
+}
+
+.about-page .contact-social-link {
+    color: var(--soft-beige);
+}
+
+.about-page .contact-exit-word {
+    color: var(--black);
+    background-color: var(--soft-beige);
+}
+
+.about-page .contact-star {
+    filter: invert(1) sepia(1) saturate(0.2) hue-rotate(330deg) brightness(0.95);
+}
+
+.about-page .door-frame-bg {
+    fill: var(--black);
+}
+
+.about-page .door-frame-border {
+    fill: var(--soft-beige);
+}
+
+.about-skills-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding-left: 1em;
+}
+
+.about-skills-serif {
+    font-family: var(--font-playfair);
+    font-style: italic;
+    font-size: 8.5vw;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--soft-beige);
+}
+
+.about-skills-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 17vw;
+    text-transform: uppercase;
+    line-height: 0.85;
+    margin-top: 0.1em;
+    color: var(--soft-beige);
+}
+
+.skills-cards {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black);
+    border: 1px solid var(--soft-beige);
+    padding: 1rem;
+    margin: 0 1em;
+    aspect-ratio: auto;
+    grid-column: span 2;
+    box-sizing: border-box;
+}
+
+.skill-card:nth-child(2) {
+    grid-column: 4 / 6;
+}
+
+.skill-card:nth-child(3) {
+    grid-column: 7 / 9;
+}
+
+.skill-card:nth-child(4) {
+    grid-column: 2 / 4;
+    margin-top: 3em;
+}
+
+.skill-card:nth-child(5) {
+    grid-column: 5 / 7;
+    margin-top: 3em;
+}
+
+.skill-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.skill-label,
+.skill-number {
+    font-family: var(--font-geist);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--soft-beige);
+}
+
+.skill-interactive {
+    aspect-ratio: 1 / 1;
+    background-color: #6B4D8A;
+    margin-bottom: 1rem;
+}
+
+.skill-card:first-child .skill-interactive {
+    background-color: transparent;
+}
+
+.skill-name {
+    font-family: var(--font-geist);
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+    text-transform: lowercase;
+    color: var(--soft-beige);
+    line-height: 1;
+    margin: 0;
+}
+
+/* About Story Section */
+
+.about-story {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 6rem 10vw;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-story-image {
+    flex: 0 0 30%;
+    overflow: hidden;
+}
+
+.about-story-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-story-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-story-text p {
+    font-family: var(--font-geist);
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--soft-beige);
+    margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 1920px) {
+    .about-hero-images {
+        width: 45vw;
+        max-width: 550px;
+    }
+    .about-story-image {
+        flex: 0 0 28%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .about-hero-images {
+        width: 40vw;
+        max-width: 500px;
+    }
+    .about-story-image {
+        flex: 0 0 25%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-intro-text {
+        width: 75%;
+    }
+    .about-intro-subtext {
+        width: 65%;
+    }
+    .about-story {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about-story-image {
+        flex: none;
+        width: 50%;
+        align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        min-height: auto;
+        padding: 6rem 1em 4rem;
+    }
+    .about-hero-title {
+        font-size: 28vw;
+        top: 65%;
+    }
+    .about-hero-images {
+        width: 55vw;
+    }
+    .about-hero-bubble {
+        right: -5rem;
+        font-size: 0.75rem;
+    }
+    .about-intro {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    .about-intro-text {
+        width: 100%;
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        padding: 0 2em;
+    }
+    .about-intro-subtext {
+        width: 100%;
+    }
+    .about-me-details {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 6rem;
+    }
+    .about-me-photo {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .about-me-info {
+        width: 100%;
+        text-align: center;
+    }
+    .about-me-description {
+        padding: 0 2em;
+    }
+    .download-cv-btn {
+        align-self: center;
+        margin-left: 0;
+        margin-top: 1.5em;
+    }
+    .about-skills {
+        padding: 1rem;
+    }
+    .about-skills-title {
+        padding-left: 0;
+    }
+    .about-skills-serif {
+        font-size: 12vw;
+    }
+    .about-skills-display {
+        font-size: 20vw;
+    }
+    .about-skills-title {
+        margin-bottom: 1rem;
+    }
+    .skills-cards {
+        grid-template-columns: 1fr;
+        gap: 1em;
+        margin-top: 1rem;
+    }
+    .skill-card {
+        grid-column: span 1 !important;
+        margin: 0;
+        margin-top: 0 !important;
+        padding: 0.75rem;
+    }
+    /* Mobile card layout - horizontal with icon left, name right */
+    .skill-card {
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    .skill-card-header {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        right: 0.75rem;
+        margin-bottom: 0;
+    }
+    /* Hide desktop interactive on mobile */
+    .skill-interactive {
+        display: none !important;
+    }
+    /* Mobile icon wrapper */
+    .mobile-icon-wrapper {
+        flex-shrink: 0;
+        width: 80px;
+        height: 80px;
+        margin-top: 1.5rem;
+    }
+    .mobile-icon {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .skill-name {
+        flex: 1;
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin-top: 1.5rem;
+    }
+    /* Hide hover bubble on mobile */
+    .cursor-bubble {
+        display: none !important;
+    }
+    .about-story {
+        padding: 4rem 1em;
+    }
+    .about-story-image {
+        width: 70%;
+    }
+    /* Hide custom cursor on mobile */
+    .custom-cursor {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero-title {
+        font-size: 28vw;
+    }
+    .about-hero-images {
+        width: 90vw;
+    }
+    .about-intro-text {
+        font-size: clamp(1.4rem, 6vw, 2rem);
+    }
+    .about-me-photo {
+        width: 85%;
+    }
+    .about-me-description {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+}
+
+/* Override dark theme door filter for about page */
+
+.about-page .contact-door-closed {
+    filter: none;
+}

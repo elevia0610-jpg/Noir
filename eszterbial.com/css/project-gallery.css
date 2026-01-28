@@ -1,0 +1,460 @@
+/* ABOUTME: Gallery layout styles for project pages
+   ABOUTME: Grid-based gallery system with various row types and media containers */
+
+/* ============================================
+   GALLERY CONTAINER
+   ============================================ */
+
+.project-gallery {
+    --gallery-offset: 1em;
+    --gallery-gutter: clamp(1rem, 1.5vw, 1.5rem);
+    --sp-section: clamp(4.5rem, 7vh, 7rem);
+
+    position: relative;
+    background-color: transparent;
+    z-index: 20;
+    padding: clamp(6rem, 10vh, 10rem) 0;
+}
+
+/* Fixed rotating smiley */
+.smiley-gallery-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    height: 30vw;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.smiley-gallery-center.is-visible {
+    pointer-events: auto;
+    opacity: 0.15;
+}
+
+.smiley-gallery-center svg {
+    width: 100%;
+    height: 100%;
+    animation: smiley-rotate 40s linear infinite;
+}
+
+@keyframes smiley-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   GALLERY ROW TYPES
+   ============================================ */
+
+/* Standard paired row - 6 column grid */
+.gallery-row {
+    display: grid;
+    grid-template-columns: var(--gallery-offset) repeat(6, 1fr) var(--gallery-offset);
+    gap: var(--gallery-gutter);
+    margin-bottom: var(--sp-section);
+    position: relative;
+    z-index: 25;
+}
+
+.gallery-row:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-row .gallery-block:nth-child(1) {
+    grid-column: 2 / 5;
+}
+
+.gallery-row .gallery-block:nth-child(2) {
+    grid-column: 5 / 8;
+}
+
+/* Full-width row */
+.gallery-row-full {
+    display: block;
+    padding: 0 var(--gallery-offset);
+    margin-bottom: var(--sp-section);
+    position: relative;
+    z-index: 25;
+}
+
+.gallery-row-full > img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery-row-full:last-child {
+    margin-bottom: 0;
+}
+
+/* Single image row */
+.gallery-row-single {
+    display: block;
+    padding: 0 var(--gallery-offset);
+    margin-bottom: var(--sp-section);
+    position: relative;
+    z-index: 25;
+}
+
+.gallery-row-single.single-left > .gallery-media {
+    width: calc(50% - var(--gallery-gutter) / 2);
+    margin-left: 0;
+}
+
+.gallery-row-single.single-right > .gallery-media {
+    width: calc(50% - var(--gallery-gutter) / 2);
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.gallery-row-single .gallery-img-natural {
+    display: block;
+    width: calc(50% - var(--gallery-gutter) / 2);
+    height: auto;
+}
+
+.gallery-row-single.single-right .gallery-img-natural {
+    margin-left: auto;
+}
+
+/* Paired row - flex layout */
+.gallery-row-paired {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--gallery-offset);
+    margin-bottom: var(--sp-section);
+    position: relative;
+    z-index: 25;
+}
+
+.gallery-row-paired .gallery-media-left {
+    width: calc(37.5% - var(--gallery-offset));
+}
+
+.gallery-row-paired .gallery-media-right {
+    width: calc(100% - 62.5% - var(--gallery-offset));
+}
+
+/* Text row - 8 column grid */
+.gallery-row-text {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-bottom: var(--sp-section);
+    position: relative;
+    z-index: 25;
+}
+
+.gallery-row-text .gallery-text-block {
+    grid-column: 5 / 9;
+    padding-left: 1em;
+    padding-right: 2em;
+}
+
+.gallery-row-text.text-left .gallery-text-block {
+    grid-column: 1 / 5;
+    padding-left: 2em;
+}
+
+/* Full width text row */
+.gallery-row-text-full {
+    display: grid;
+    grid-template-columns: var(--gallery-offset) repeat(6, 1fr) var(--gallery-offset);
+    gap: var(--gallery-gutter);
+    margin-bottom: var(--sp-section);
+    position: relative;
+    z-index: 25;
+}
+
+.gallery-row-text-full .gallery-text-block {
+    grid-column: 2 / 8;
+}
+
+/* Posters row - three posters */
+.gallery-row-posters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    padding: 0 1em;
+    margin-bottom: var(--sp-section);
+    position: relative;
+    z-index: 25;
+    align-items: start;
+}
+
+.gallery-row-posters .gallery-media {
+    aspect-ratio: auto;
+    clip-path: none;
+    overflow: visible;
+}
+
+.gallery-row-posters .gallery-media img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    will-change: transform;
+}
+
+/* Poster row - simple flex */
+.gallery-poster-row {
+    display: flex;
+    gap: 1em;
+    padding: 0 1em;
+    margin-bottom: calc(var(--sp-section) + 80px);
+    position: relative;
+    z-index: 25;
+}
+
+.gallery-poster-row img {
+    flex: 1;
+    width: 0;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Image + Text row */
+.gallery-row-image-text {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2rem;
+    padding: 0 1em;
+    margin-bottom: var(--sp-section);
+    align-items: center;
+}
+
+.gallery-row-image-text .gallery-image-col {
+    grid-column: 1 / 5;
+}
+
+.gallery-row-image-text .gallery-image-col img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery-row-image-text .gallery-text-col {
+    grid-column: 5 / 9;
+}
+
+/* Twin images centered */
+.gallery-row-twin-centered {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-top: calc(var(--sp-section) * 2);
+    margin-bottom: calc(var(--sp-section) + 80px);
+    align-items: end;
+}
+
+.gallery-row-twin-centered .gallery-twin-item {
+    grid-column: span 3;
+    padding: 1em;
+}
+
+.gallery-row-twin-centered .gallery-twin-item:first-child {
+    grid-column: 2 / 5;
+}
+
+.gallery-row-twin-centered .gallery-twin-item:last-child {
+    grid-column: 5 / 8;
+}
+
+.gallery-row-twin-centered .gallery-twin-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ============================================
+   GALLERY BLOCKS & MEDIA
+   ============================================ */
+
+.gallery-block {
+    position: relative;
+}
+
+.gallery-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    clip-path: inset(100% 0% 0% 0%);
+}
+
+.gallery-media img {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    position: absolute;
+    top: -10%;
+    left: 0;
+    transform: scale(1.05);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+/* Aspect ratio variants */
+.gallery-media-landscape {
+    aspect-ratio: 16 / 10;
+}
+
+.gallery-media-landscape-wide {
+    aspect-ratio: 24 / 10;
+}
+
+.gallery-media-wide {
+    aspect-ratio: 21 / 9;
+}
+
+.gallery-media-portrait {
+    aspect-ratio: 3 / 4;
+}
+
+.gallery-media-square {
+    aspect-ratio: 1 / 1;
+}
+
+/* Position variants */
+.gallery-media-top img {
+    top: 0;
+    object-position: top;
+}
+
+/* No-crop variant */
+.gallery-media-no-crop {
+    aspect-ratio: unset;
+    clip-path: none;
+    overflow: visible;
+}
+
+.gallery-media-no-crop img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    transform: none;
+}
+
+/* With credit overlay */
+.gallery-media-with-credit {
+    position: relative;
+}
+
+.photo-credit {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    font-family: var(--font-geist);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--soft-beige);
+    background: rgba(67, 48, 46, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    z-index: 5;
+}
+
+/* ============================================
+   GALLERY TEXT ELEMENTS
+   ============================================ */
+
+.gallery-text-block {
+    padding: clamp(2rem, 4vw, 4rem) 0;
+    max-width: 100%;
+}
+
+.gallery-row-text.text-intro .gallery-text-block {
+    padding: clamp(3rem, 6vw, 6rem) 0;
+}
+
+.gallery-row-text.text-intro .gallery-paragraph {
+    font-size: 30vw;
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+.text-intro-full {
+    padding: clamp(4rem, 8vw, 8rem) 2em;
+}
+
+.gallery-label {
+    font-family: var(--font-geist);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--soft-beige);
+    opacity: 0.4;
+    display: block;
+    margin-bottom: clamp(1.5rem, 3vw, 3rem);
+}
+
+.gallery-heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 4rem);
+    text-transform: uppercase;
+    color: var(--soft-beige);
+    line-height: 0.95;
+    margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+}
+
+.gallery-paragraph {
+    font-family: var(--font-geist);
+    font-size: 2vw;
+    line-height: 1.3;
+    color: var(--soft-beige);
+    opacity: 0.85;
+    margin: 0;
+}
+
+.gallery-paragraph + .gallery-paragraph {
+    margin-top: 1.5em;
+}
+
+.gallery-paragraph.text-highlight {
+    color: var(--muted-beige);
+    font-weight: 400;
+    opacity: 1;
+}
+
+.gallery-paragraph.text-highlight strong {
+    color: var(--soft-beige);
+    font-weight: 500;
+}
+
+.gallery-text-title {
+    font-family: var(--font-geist);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--soft-beige);
+    margin-bottom: 1rem;
+}
+
+/* Text reveal animation */
+.reveal-text {
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.reveal-text.is-revealed {
+    clip-path: inset(0 0 0% 0);
+    transform: translateY(0);
+    opacity: 1;
+    transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 1s ease;
+}
+
+.gallery-text-block .reveal-text:nth-child(1) { transition-delay: 0s; }
+.gallery-text-block .reveal-text:nth-child(2) { transition-delay: 0.15s; }
+.gallery-text-block .reveal-text:nth-child(3) { transition-delay: 0.3s; }

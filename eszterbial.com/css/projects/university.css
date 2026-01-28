@@ -1,0 +1,45 @@
+/* ABOUTME: University Portfolio Site project-specific styles
+   ABOUTME: Paired images with parallax offset */
+
+/* Background image */
+.university-portfolio-bg-image {
+    background-image: url('https://media.eszterbial.com/img/works/university-portfolio-site/website-in-use-1.jpg');
+}
+
+/* ============================================
+   PAIRED IMAGES ROW
+   ============================================ */
+
+.university-paired-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+    margin: 12rem 0 4rem 0;
+}
+
+.university-paired-item {
+    grid-column: span 3;
+    overflow: visible;
+    will-change: transform;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 0.5rem;
+    height: fit-content;
+}
+
+.university-paired-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Vertical offset */
+.university-paired-left {
+    transform: translateY(0);
+}
+
+.university-paired-right {
+    transform: translateY(36rem);
+}
