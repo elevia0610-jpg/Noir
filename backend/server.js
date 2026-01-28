@@ -7,7 +7,9 @@ const sgMail = require("@sendgrid/mail");
 const app = express();
 
 // ===== Middleware =====
-app.use(cors()); // allow frontend requests
+app.use(cors({
+  origin: "https://noir-nu-ten.vercel.app/"
+}));
 app.use(express.json()); // parse JSON body
 
 // ===== SendGrid Setup =====
