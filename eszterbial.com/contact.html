@@ -148,7 +148,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const fullName = firstName + " " + lastName;
 
     try {
-        const res = await fetch("http://localhost:5000/send-email", {
+        const res = await fetch("https://noir-backend-d34o.onrender.com/send-email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
