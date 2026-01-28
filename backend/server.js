@@ -9,11 +9,12 @@ const app = express();
 // ===== Middleware =====
 app.use(cors({
   origin: [
-    "https://noir-nu-ten.vercel.app",
     "https://noirstudio.co.in",
-    "http://noirstudio.co.in"
+    "https://www.noirstudio.co.in",
+    "https://noir-nu-ten.vercel.app" // optional old Vercel URL
   ],
-  methods: ["POST", "GET"]
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
 }));
 app.use(express.json()); // parse JSON body
 
