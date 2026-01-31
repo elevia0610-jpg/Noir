@@ -13,11 +13,7 @@
     color: var(--soft-beige);
 }
 
-.about-page .logo-line {
-    background: rgba(26, 26, 26, 0.35);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
+
 
 .about-page .menu-btn {
     background-color: var(--white);

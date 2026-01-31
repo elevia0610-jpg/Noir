@@ -167,7 +167,6 @@ header {
 
 .logo-line {
     display: block;
-    background: rgba(230, 225, 221, 0.35);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 0.1em 0.3em;
@@ -176,7 +175,7 @@ header {
 }
 
 [data-theme="dark"] .logo-line {
-    background: rgba(67, 48, 46, 0.35);
+    color: #232323;
 }
 
 .logo.logo-light {
@@ -686,7 +685,7 @@ main {
 
 .about-me-text {
     font-family: var(--font-geist);
-    font-size: clamp(1.6rem, 4vw, 3.5rem);
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
     font-weight: 700;
     line-height: 1.05;
     text-transform: uppercase;
@@ -2063,15 +2062,7 @@ main {
 
 /* Controls Container (Theme Toggle + Language Switcher) */
 .controls-container {
-    position: fixed;
-    left: 1em;
-    bottom: 1em;
-    z-index: 100;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    transition: opacity 0.3s ease;
+    display: none !important;
 }
 
 .controls-container.hidden {
@@ -2226,19 +2217,7 @@ main {
     color: var(--black);
 }
 
-.index-page .logo-line {
-    background: rgba(230, 225, 221, 0.35);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
 
-[data-theme="dark"] .index-page .logo {
-    color: var(--soft-beige);
-}
-
-[data-theme="dark"] .index-page .logo-line {
-    background: rgba(67, 48, 46, 0.35);
-}
 
 /* Contact Form Styles */
 .contact-form-container {
@@ -2388,3 +2367,40 @@ main {
         width: 100%;
     }
 }
+/* .menu-card {
+    background-color: var(--bg-secondary);
+}
+
+.menu-link {
+    color: var(--text-primary);
+}
+
+.menu-separator {
+    background-color: var(--text-primary);
+}
+
+.social-link {
+    color: #232323;
+}
+
+.menu-btn {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+}
+
+.menu-close-btn svg path {
+    stroke: var(--text-primary);
+} */
+/* Darker menu text when theme is dark */
+
+.menu-link,
+.social-link,
+.menu-btn,
+.menu-separator,
+.menu-card,
+.menu-close-btn svg path {
+    background-color: #d3d0ce !important;
+    color: #232323 !important;
+    stroke: #232323 !important;
+}
+
