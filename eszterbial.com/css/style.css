@@ -1,13 +1,13 @@
 :root {
     /* Base colors */
-    --soft-beige: #232323;
+    --soft-beige: #D3D0CE;
     --muted-beige: #ADA8A4;
     /* --beige: #535151; */
     --beige: #3F3E3E;
     --dark-beige: #5C5652;
     --darker-beige: #3F3A37;
     /* --black: #DCCFC6; */
-    --black: #D3D0CE;
+    --black: #232323;
     --white: #FFFFFF;
     --warm-white: #FCF8F5;
     --violet: #A199FF;
@@ -26,9 +26,9 @@
     --font-playfair: 'Playfair Display', serif;
 }
 
-/* Dark mode */
+/* Light mode only for bottom collaborating section*/
 [data-theme="dark"] {
-    --bg-primary: #1A1A1A;
+    --bg-primary: #232323;
     --bg-secondary: #252525;
     --text-primary: #E6E1DD;
     --text-secondary: #9A918A;
@@ -39,17 +39,7 @@
 
 /* System preference detection (when no explicit theme is set) */
 /* System preference detection (when no explicit theme is set) */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --bg-primary: #D3D0CE;
-        --bg-secondary: #252525;
-        --text-primary: #232323;
-        --text-secondary: #9A918A;
-        --accent: #3D3D3D;
-        --accent-inverse: #1A1A1A;
-        --border: #B3A69D;
-    }
-}
+
 
 @font-face {
     font-family: 'BiggerDisplay';
@@ -175,7 +165,7 @@ header {
 }
 
 [data-theme="dark"] .logo-line {
-    color: #232323;
+    color: #d3d0ce;
 }
 
 .logo.logo-light {
@@ -207,8 +197,6 @@ header {
     line-height: 0.8;
     border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    opacity: 0;
-    transform: translateY(-20px);
 }
 
 /* Menu Card */
@@ -1388,24 +1376,37 @@ main {
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: normal;
+
     background-color: var(--bg-secondary);
-    color: var(--text-primary);
+    color: #232323;
+
     padding: 0.6rem 0.5rem 0.15rem 0.5rem;
     height: fit-content;
     line-height: 0.8;
     border-radius: 8px;
-    transform: translate(-50%, -50%) scale(0);
+
+    /* 👇 IMPORTANT */
+    transform: translate(-50%, -60%);
     opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
         background-color 0.3s ease,
         color 0.3s ease;
+
+    /* 👇 crisp text rendering */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 .view-work-cursor.visible {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%);
 }
+
 
 /* Ensure project images have proper cursor behavior */
 .project-image {

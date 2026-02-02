@@ -13,7 +13,11 @@
     color: var(--soft-beige);
 }
 
-
+.about-page .logo-line {
+    background: rgba(26, 26, 26, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
 
 .about-page .menu-btn {
     background-color: var(--white);
@@ -638,9 +642,78 @@
         font-size: clamp(1rem, 4vw, 1.2rem);
     }
 }
+[data-theme="light"] .about-page {
+    background-color: var(--soft-beige);
+    color: var(--black);
+}
 
+[data-theme="light"] .about-page .logo {
+    color: var(--black);
+}
+
+[data-theme="light"] .about-page .menu-btn {
+    background-color: #fff;
+    color: var(--black);
+}
+
+[data-theme="light"] .about-page .grid-background .line {
+    background-color: rgba(26, 26, 26, 0.1);
+}
+
+[data-theme="light"] .about-page .works-title-favorite,
+[data-theme="light"] .about-page .works-title-main {
+    color: var(--black);
+}
+
+[data-theme="light"] .about-page .work-card {
+    color: var(--black);
+    background-color: #fff;
+    border: none;
+}
+
+[data-theme="light"] .about-page .contact-marquee-text {
+    color: var(--black);
+}
+
+[data-theme="light"] .about-page .contact-title {
+    color: var(--black);
+}
+
+[data-theme="light"] .about-page .contact-cta-label {
+    color: var(--black);
+}
+
+[data-theme="light"] .about-page .contact-email {
+    color: var(--black);
+}
+
+[data-theme="light"] .about-page .contact-social-link {
+    color: var(--black);
+}
+
+[data-theme="light"] .about-page .contact-exit-word {
+    color: var(--soft-beige);
+    background-color: var(--black);
+}
 /* Override dark theme door filter for about page */
 
 .about-page .contact-door-closed {
     filter: none;
+}
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    .show-mobile {
+        display: inline;
+    }
+
+    [data-theme="light"] .about-page .contact-door-closed {
+        filter: none;
+    }
 }

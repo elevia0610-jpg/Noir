@@ -166,6 +166,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: #232323 !important;
 }
 
 .work-card-title {
@@ -176,6 +177,7 @@
     line-height: 1;
     margin: 0;
     white-space: nowrap;
+    color: #232323 !important;
 }
 
 .work-card-subtitle {
@@ -187,6 +189,7 @@
     margin: -0.3em 0 0 0;
     opacity: 0.7;
     white-space: nowrap;
+    color: #232323 !important;
 }
 
 /* Work card badge wrapper and badge */
