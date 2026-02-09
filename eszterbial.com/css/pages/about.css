@@ -350,7 +350,8 @@
 
 .skills-cards {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
     margin-top: 1rem;
     width: 100%;
     margin-bottom: 2rem;
@@ -362,29 +363,9 @@
     background-color: var(--black);
     border: 1px solid var(--soft-beige);
     padding: 1rem;
-    margin: 0 1em;
-    aspect-ratio: auto;
-    grid-column: span 2;
     box-sizing: border-box;
 }
 
-.skill-card:nth-child(2) {
-    grid-column: 4 / 6;
-}
-
-.skill-card:nth-child(3) {
-    grid-column: 7 / 9;
-}
-
-.skill-card:nth-child(4) {
-    grid-column: 2 / 4;
-    margin-top: 3em;
-}
-
-.skill-card:nth-child(5) {
-    grid-column: 5 / 7;
-    margin-top: 3em;
-}
 
 .skill-card-header {
     display: flex;
@@ -565,31 +546,36 @@
         margin-bottom: 1rem;
     }
     .skills-cards {
+        display: grid;
         grid-template-columns: 1fr;
-        gap: 1em;
+        gap: 1.25rem;
         margin-top: 1rem;
     }
+
     .skill-card {
-        grid-column: span 1 !important;
-        margin: 0;
-        margin-top: 0 !important;
-        padding: 0.75rem;
-    }
-    /* Mobile card layout - horizontal with icon left, name right */
-    .skill-card {
-        position: relative;
+        display: flex;
         flex-direction: row;
         align-items: center;
         gap: 1rem;
+
+        padding: 0.75rem;
+        margin: 0;
+        grid-column: auto;
+        position: relative;
     }
+
+    /* Header pinned top */
     .skill-card-header {
         position: absolute;
         top: 0.75rem;
         left: 0.75rem;
         right: 0.75rem;
-        margin-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
     }
-    /* Hide desktop interactive on mobile */
+
+    /* Hide desktop interactive visuals */
     .skill-interactive {
         display: none !important;
     }
