@@ -72,9 +72,9 @@
 
 /* Grid lines for dark background */
 
-.about-page .grid-background .line {
-    background-color: rgba(230, 225, 221, 0.1);
-}
+/* .about-page .grid-background .line {
+    background-color: #c6bbb2;;
+} */
 
 /* About Hero Section */
 
@@ -98,7 +98,7 @@
     line-height: 0.85;
     z-index: 3;
     pointer-events: none;
-    top: 75%;
+    top: 55%;
     transform: translateY(-50%);
 }
 
@@ -173,9 +173,9 @@
 
 .about-intro-text {
     font-family: var(--font-geist);
-    font-size: clamp(1.6rem, 4vw, 3.5rem);
+    font-size: clamp(1.6rem, 3vw, 3.5rem);
     font-weight: 700;
-    line-height: 1.05;
+    /* line-height: 1.05; */
     text-transform: uppercase;
     letter-spacing: 0;
     width: 70%;
@@ -353,6 +353,7 @@
     grid-template-columns: repeat(8, 1fr);
     margin-top: 1rem;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .skill-card {
@@ -656,9 +657,9 @@
     color: var(--black);
 }
 
-[data-theme="light"] .about-page .grid-background .line {
-    background-color: rgba(26, 26, 26, 0.1);
-}
+/* [data-theme="light"] .about-page .grid-background .line {
+    background-color: rgba(198, 187, 178, 1);
+} */
 
 [data-theme="light"] .about-page .works-title-favorite,
 [data-theme="light"] .about-page .works-title-main {
@@ -700,20 +701,4 @@
 .about-page .contact-door-closed {
     filter: none;
 }
-.show-mobile {
-    display: none;
-}
 
-@media (max-width: 768px) {
-    .hide-mobile {
-        display: none;
-    }
-
-    .show-mobile {
-        display: inline;
-    }
-
-    [data-theme="light"] .about-page .contact-door-closed {
-        filter: none;
-    }
-}

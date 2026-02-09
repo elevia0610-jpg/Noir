@@ -698,7 +698,7 @@
 }
 
 [data-theme="light"] .project-page .grid-background .line {
-    background-color: rgba(67, 48, 46, 0.12);
+    background-color: rgba(198, 187, 178, 1);
 }
 
 [data-theme="light"] .project-header .logo {
@@ -827,7 +827,7 @@
     }
 
     :root:not([data-theme="dark"]) .project-page .grid-background .line {
-        background-color: rgba(67, 48, 46, 0.12);
+        background-color: rgba(198, 187, 178, 1);
     }
 
     :root:not([data-theme="dark"]) .project-header .logo {

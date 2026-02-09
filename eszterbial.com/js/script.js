@@ -1214,7 +1214,7 @@ function initViewAllMagnetic() {
     const flowerSize = iconRect.width || 70;
 
     // Replace beige flower img with custom image
-    circleIcon.outerHTML = `<img class="view-all-circle-icon" src="assets/image/img2.png" alt="View All">`;
+    circleIcon.outerHTML = `<img class="view-all-circle-icon" src="assets/image/custom-cursor1.png" alt="View All">`;
 
     // Create purple flower cursor
     const flowerCursor = document.createElement('div');
