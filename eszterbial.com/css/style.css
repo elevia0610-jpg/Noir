@@ -500,15 +500,18 @@ main {
     overflow: visible; /* Allow SVG content to spill out */
     transition: filter 0.3s ease;
 }
-
+.smiley-graphic:hover .rotating-graphic {
+    filter: url(#wave);
+    transform: scale(1.02);
+}
 /* @keyframes rotate-continuous {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 } */
 
-.rotating-graphic {
+/* .rotating-graphic {
     animation: rotate-continuous 10s linear infinite;
-}
+} */
 
 
 /* Typography */

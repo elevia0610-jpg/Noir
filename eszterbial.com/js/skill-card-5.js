@@ -1,13 +1,13 @@
 // ABOUTME: Skill card 5 - Horizontal stripes of rectangles that rotate near mouse
 // ABOUTME: Op-art Bridget Riley style effect with brain-melting rotation animation
 
-const card5 = document.querySelector('.skill-card:last-child');
+const card5 = document.querySelector('.skill-card-5');
 
 if (card5) {
     const container = card5.querySelector('.skill-interactive');
     card5.id = 'skill-card-5';
 
-    const canvas = document.createElement('canvas');
+     const canvas = container.querySelector("canvas");
     canvas.classList.add('doodle-canvas');
     container.appendChild(canvas);
     const ctx = canvas.getContext('2d');

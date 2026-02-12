@@ -444,7 +444,6 @@ function initCircleSplitting() {
 }
 
 // Skill Card 1 Interaction (Gravity/Physics) - REMOVED to avoid conflict with splitting interaction
-/*
 function initSkillCard1Physics() {
     const card1 = document.getElementById('skill-card-1');
     if (card1) {
@@ -499,7 +498,7 @@ function initSkillCard1Physics() {
         updatePhysics();
     }
 }
-*/
+
 
 // Countdown timer to 4:20 PM
 function initCountdownTimer() {
