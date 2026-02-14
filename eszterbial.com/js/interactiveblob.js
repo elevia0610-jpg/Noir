@@ -17,7 +17,7 @@ class InteractiveSmiley {
         this.config = {
             // Hover interaction
             maxRotation: 5,        // Maximum rotation in degrees
-            maxScale: 1.0,         // Maximum scale factor
+            maxScale: 1.5,         // Maximum scale factor
             maxSkew: 5,             // Maximum skew in degrees
             smoothness: 0.01,       // Lower = smoother (0-1)
             
@@ -25,7 +25,7 @@ class InteractiveSmiley {
             waveSpeed: 0.0015,       // Speed of wavy movement
             waveAmplitude: {
                 rotation: 5,        // Rotation wave amplitude
-                scale: 0.08,        // Scale wave amplitude
+                scale: 0.4,        // Scale wave amplitude
                 translateX: 5,     // Horizontal movement
                 translateY: 5,     // Vertical movement
             }
