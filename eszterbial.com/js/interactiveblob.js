@@ -15,19 +15,19 @@ class InteractiveSmiley {
 
         // Configuration
         this.config = {
-            // Hover interaction
-            maxRotation: 5,        // Maximum rotation in degrees
-            maxScale: 1.5,         // Maximum scale factor
-            maxSkew: 5,             // Maximum skew in degrees
-            smoothness: 0.01,       // Lower = smoother (0-1)
+            // Hover interaction - UPDATED FOR BETTER RESPONSIVENESS
+            maxRotation: 15,        // Maximum rotation in degrees (was 5)
+            maxScale: 1.12,         // Maximum scale factor (was 1.0)
+            maxSkew: 8,             // Maximum skew in degrees (was 5)
+            smoothness: 0.01,       // Lower = smoother (0-1) (was 0.01)
             
             // Idle animation
-            waveSpeed: 0.0015,       // Speed of wavy movement
+            waveSpeed: 0.0015,      // Speed of wavy movement
             waveAmplitude: {
                 rotation: 5,        // Rotation wave amplitude
-                scale: 0.4,        // Scale wave amplitude
-                translateX: 5,     // Horizontal movement
-                translateY: 5,     // Vertical movement
+                scale: 0.03,         // Scale wave amplitude
+                translateX: 5,      // Horizontal movement
+                translateY: 5,      // Vertical movement
             }
         };
 
@@ -106,8 +106,8 @@ class InteractiveSmiley {
 
         // Calculate transforms based on cursor position
         return {
-            x: normalizedX * 20,  // Translate horizontally
-            y: normalizedY * 20,  // Translate vertically
+            x: normalizedX * 25,  // Translate horizontally (increased from 20)
+            y: normalizedY * 25,  // Translate vertically (increased from 20)
             rotation: normalizedX * this.config.maxRotation,  // Rotate based on X
             scale: 1 + (Math.abs(normalizedX) + Math.abs(normalizedY)) / 2 * (this.config.maxScale - 1),
             skewX: normalizedY * this.config.maxSkew,  // Skew based on Y
