@@ -376,6 +376,22 @@
     font-weight: 500;
 }
 
+.typography-etna {
+    font-family: 'Etna', serif;
+    font-weight: 400;
+}
+.typography-gelatio{
+    font-family: 'Gelatio', sans-serif;
+    font-weight: 400;
+}
+.typography-paytone {
+    font-family: 'Paytone One', sans-serif;
+    font-weight: 400;
+}
+.typography-poppins {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
 .typography-name {
     font-family: var(--font-geist);
     font-size: 0.9rem;

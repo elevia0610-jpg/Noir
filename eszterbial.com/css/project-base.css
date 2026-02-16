@@ -29,10 +29,7 @@ html:has(.project-page) {
     pointer-events: none;
 }
 
-.project-page .grid-background .line {
-    background-color: rgba(198, 187, 178, 1);
-    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 /* ============================================
    PROJECT HEADER
@@ -209,8 +206,8 @@ html:has(.project-page) {
 
 .custom-cursor {
     position: fixed;
-    width: 24px;
-    height: 24px;
+    width: 90px;
+    height: 90px;
     background-image: url('../assets/image/custom-cursor1.png');
     background-size: contain;
     background-repeat: no-repeat;
