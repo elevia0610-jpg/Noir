@@ -125,9 +125,9 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color: var(--soft-beige);
+    color: #d3d0ce;
     background-color: var(--black);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
     border-radius: 8px;
     overflow: hidden;
     will-change: opacity;
@@ -214,7 +214,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--soft-beige);
+    background-color: #d3d0ce;
     border-radius: 50%;
 }
 
@@ -284,14 +284,18 @@
     width: 100%;
 }
 
+/* stagger like works */
+.projects-grid > .work-card:nth-child(even){
+    transform: translateY(calc(31vh + 1em));
+}
 .projects-grid-featured .work-card-featured {
-    background-color: #fff;
+    background-color: #232323;
     border: none;
 }
 
 .projects-grid-featured .work-card-featured .work-card-title,
 .projects-grid-featured .work-card-featured .work-card-subtitle {
-    color: var(--black);
+    color: #d3d0ce;
 }
 
 .projects-grid-featured .work-card-featured .work-card-image {

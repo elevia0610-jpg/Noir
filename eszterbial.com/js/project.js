@@ -1933,8 +1933,8 @@ function initNextProjectBadgeMagnetic() {
     // Replace beige flower img with inline SVG for manipulation
     const beigeFlowerSVG = `
         <svg class="next-project-badge-icon beige-flower-svg" viewBox="0 0 31.1 28.3" xmlns="http://www.w3.org/2000/svg">
-            <path class="beige-petal-right" d="M23.3,9.7c3.5-2,3.5-7,0-9s-7.8.5-7.8,4.5v18c0,4,4.3,6.5,7.8,4.5s3.5-7,0-9c3.5,2,7.8-.5,7.8-4.5s-4.3-6.5-7.8-4.5Z" fill="#e6e1dd"/>
-            <path class="beige-petal-left" d="M7.8.7c-3.5,2-3.5,7,0,9C4.3,7.7,0,10.2,0,14.2s4.3,6.5,7.8,4.5c-3.5,2-3.5,7,0,9s7.8-.5,7.8-4.5V5.2C15.6,1.2,11.2-1.3,7.8.7Z" fill="#e6e1dd"/>
+            <path class="beige-petal-right" d="M23.3,9.7c3.5-2,3.5-7,0-9s-7.8.5-7.8,4.5v18c0,4,4.3,6.5,7.8,4.5s3.5-7,0-9c3.5,2,7.8-.5,7.8-4.5s-4.3-6.5-7.8-4.5Z" fill="#d3d0ce"/>
+            <path class="beige-petal-left" d="M7.8.7c-3.5,2-3.5,7,0,9C4.3,7.7,0,10.2,0,14.2s4.3,6.5,7.8,4.5c-3.5,2-3.5,7,0,9s7.8-.5,7.8-4.5V5.2C15.6,1.2,11.2-1.3,7.8.7Z" fill="#d3d0ce"/>
             <g class="beige-flower-face">
                 <path class="beige-eye-left" d="M14.3,11.3c-1.2,1.2-3.2,1.2-4.4,0" fill="none" stroke="#1a1a1a" stroke-linecap="round" stroke-miterlimit="10"/>
                 <path class="beige-eye-right" d="M21.1,11.3c-1.2,1.2-3.2,1.2-4.4,0" fill="none" stroke="#1a1a1a" stroke-linecap="round" stroke-miterlimit="10"/>

@@ -354,7 +354,7 @@ function initCircleSplitting() {
             this.element.setAttribute('cx', this.x);
             this.element.setAttribute('cy', this.y);
             this.element.setAttribute('r', this.radius);
-            this.element.setAttribute('fill', '#EAE0D5');
+            this.element.setAttribute('fill', '#d3d0ce');
             this.element.setAttribute('stroke', '#1A1A1A');
             this.element.setAttribute('stroke-width', '1');
             this.element.style.cursor = this.level < 6 ? 'pointer' : 'default';

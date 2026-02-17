@@ -6,7 +6,7 @@
 
     if (!isMobile()) return;
 
-    const beige = '#e6e1dd';
+    const beige = '#d3d0ce';
     const black = '#1a1a1a';
 
     function createIconWrapper(svgContent) {

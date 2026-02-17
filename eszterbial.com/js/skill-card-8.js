@@ -7,7 +7,7 @@
         GRID_SIZE: 5,              // Number of cells per row/column (20x20 = 400 cells)
         PROXIMITY_RADIUS: 3,        // Distance in grid units for grey effect
         BASE_COLOR: '#000000',      // Black background
-        ACTIVE_COLOR: '#ffffff',    // White for hovered cell
+        ACTIVE_COLOR: '#d3d0ce',    // White for hovered cell
         FADE_IN_DURATION: 200,      // Fast fade-in when hovering (ms)
         FADE_OUT_DURATION: 1200,    // Slow fade-out when leaving (ms)
         TRAIL_PERSISTENCE: 0.7,     // How much previous cells retain color (0-1)

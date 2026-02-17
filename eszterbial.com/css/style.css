@@ -8,7 +8,7 @@
     --darker-beige: #3F3A37;
     /* --black: #DCCFC6; */
     --black: #232323;
-    --white: #FFFFFF;
+    --white: #d3d0ce;
     --warm-white: #FCF8F5;
     --violet: #A199FF;
 
@@ -30,7 +30,7 @@
 [data-theme="dark"] {
     --bg-primary: #232323;
     --bg-secondary: #252525;
-    --text-primary: #E6E1DD;
+    --text-primary: #d3d0ce;
     --text-secondary: #9A918A;
     --accent: #3D3D3D;
     --accent-inverse: #1A1A1A;
@@ -53,6 +53,25 @@
     font-family: 'MangoGrotesque';
     src: url('../fonts/Mango Grotesque-VF.ttf') format('truetype');
     font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+/* Gellatio */
+@font-face {
+    font-family: 'Gellatio';
+    src: url('../fonts/Gellatio\ Personal\ Use\ Only.woff2') format('woff2'),
+         url('../fonts/Gellatio\ Personal\ Use\ Only.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Etna Sans Serif */
+@font-face {
+    font-family: 'Etna Sans';
+    src: url('../fonts/etna-free-font.woff2') format('woff2'),
+         url('../fonts/etna-free-font.woff') format('woff');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -1662,6 +1681,7 @@ svg {
     line-height: 0.7;
     margin-bottom: 3rem;
     transition: color 0.3s ease;
+    margin-top: 8rem;
 }
 
 .contact-title-line {
