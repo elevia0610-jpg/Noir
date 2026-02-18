@@ -2286,7 +2286,7 @@ svg {
 
 .contact-info-left {
     font-family: var(--font-geist);
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     line-height: 1.7;
     color: var(--text-secondary);
     text-align: left;
@@ -2337,7 +2337,6 @@ svg {
 
 .main-label {
     font-size: 1.1rem;
-    opacity: 1 !important;
     margin-bottom: 0.5rem;
     display: block;
 }
