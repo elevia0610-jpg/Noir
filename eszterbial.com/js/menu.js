@@ -5,11 +5,11 @@
     'use strict';
 
     // Configuration
-    const SOCIAL_LINKS = {
-        linkedin: 'https://www.linkedin.com/in/eszterbial',
-        behance: 'https://www.behance.net/eszterbial',
-        instagram: 'https://www.instagram.com/eszterbial/'
-    };
+    // const SOCIAL_LINKS = {
+    //     linkedin: 'https://www.linkedin.com/in/eszterbial',
+    //     behance: 'https://www.behance.net/eszterbial',
+    //     instagram: 'https://www.instagram.com/eszterbial/'
+    // };
 
     // Detect if we're in a subdirectory (e.g., /projects/)
     function getBasePath() {
@@ -70,11 +70,6 @@
                     ${themeToggleHTML}
                 </nav>
                 <div class="menu-separator"></div>
-                <div class="menu-footer">
-                    <a href="${SOCIAL_LINKS.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link">LINKEDIN ↗</a>
-                    <a href="${SOCIAL_LINKS.behance}" target="_blank" rel="noopener noreferrer" class="social-link">BEHANCE ↗</a>
-                    <a href="${SOCIAL_LINKS.instagram}" target="_blank" rel="noopener noreferrer" class="social-link">INSTAGRAM ↗</a>
-                </div>
             </div>
         `;
     }
