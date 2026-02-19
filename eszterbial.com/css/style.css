@@ -994,11 +994,12 @@ svg {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 120vw;
-        height: auto;
+        width: 200px !important;
+        height: 200px !important;
         max-height: 90vh;
         margin: 0;
         z-index: 0;
+        bottom: -40%;
     }
 
     .smiley-graphic svg {

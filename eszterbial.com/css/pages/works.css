@@ -329,6 +329,9 @@
         align-self: flex-end;
         padding-bottom: 0.1em;
     }
+    .projects-grid > .work-card:nth-child(even){
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 480px) {
