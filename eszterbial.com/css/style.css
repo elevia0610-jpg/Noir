@@ -822,6 +822,7 @@ svg {
 }
 
 @media (max-width: 768px) {
+    
     .about-me {
         min-height: auto;
         padding: 4rem 4em;
@@ -1484,8 +1485,8 @@ svg {
     }
 
     .view-all-circle-icon {
-        width: min(8vw, 60px);
-        height: min(8vw, 60px);
+        width: 120px;
+        height: 120px;
     }
 
     .projects-star {
@@ -1502,6 +1503,10 @@ svg {
 
     .project-name {
         font-size: clamp(3rem, 14vw, 5rem);
+    }
+    .contact-title {
+        font-size: min(18vw, 5rem);
+        text-align: center !important;
     }
 }
 
@@ -1540,6 +1545,7 @@ svg {
 
     .contact-title {
         font-size: min(18vw, 5rem);
+        text-align: center;
     }
 
     .contact-marquee-text {
@@ -1556,8 +1562,8 @@ svg {
     }
 
     .view-all-circle-icon {
-        width: 50px;
-        height: 50px;
+        width: 120px;
+        height: 120px;
     }
 
     .view-all-circle-text text {
@@ -1683,6 +1689,7 @@ svg {
     margin-bottom: 3rem;
     transition: color 0.3s ease;
     margin-top: 8rem;
+    text-align: left;
 }
 
 .contact-title-line {
@@ -1841,9 +1848,6 @@ svg {
 
 /* Contact Section Responsive */
 @media (max-width: 768px) {
-    .contact-section {
-        padding: 1em;
-    }
 
     .contact-footer {
         display: flex;
@@ -2410,6 +2414,15 @@ svg {
     .submit-btn {
         width: 100%;
     }
+    .form-row {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .form-row .form-group {
+        flex: 1;
+    }
 }
 /* .menu-card {
     background-color: var(--bg-secondary);
@@ -2446,4 +2459,22 @@ svg {
     background-color: #d3d0ce !important;
     color: #232323 !important;
     stroke: #232323 !important;
+}
+@media (max-width: 768px) {
+
+    body.contact-page main {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+    }
+
+    body.contact-page {
+        overflow-y: auto !important;
+    }
+
+    body.contact-page .contact-section {
+        min-height: auto;
+        padding-bottom: 120px;
+    }
+
 }
