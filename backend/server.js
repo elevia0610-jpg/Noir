@@ -22,10 +22,9 @@ app.use(express.json()); // parse JSON body
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // ===== Health check (optional) =====
-app.get("/", (req, res) => {
-  res.send("Server is running 🚀");
+app.get("/health", (req, res) => {
+    res.status(200).send("OK");
 });
-
 // ===== Contact Form Endpoint =====
 app.post("/send-email", async (req, res) => {
   const { name, email, message } = req.body;
