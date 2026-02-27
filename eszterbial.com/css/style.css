@@ -1676,7 +1676,7 @@ svg {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 15rem;
 }
 
 .contact-title {
@@ -1689,7 +1689,7 @@ svg {
     margin-bottom: 3rem;
     transition: color 0.3s ease;
     margin-top: 8rem;
-    text-align: left;
+    text-align: center;
 }
 
 .contact-title-line {
@@ -1848,7 +1848,9 @@ svg {
 
 /* Contact Section Responsive */
 @media (max-width: 768px) {
-
+    .contact-main{
+        padding-top: 0rem;
+    }
     .contact-footer {
         display: flex;
         flex-wrap: wrap;
