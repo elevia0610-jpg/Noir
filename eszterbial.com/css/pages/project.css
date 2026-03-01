@@ -44,3 +44,7 @@
    Must be last to override all styles
    ============================================ */
 @import url('../project-responsive.css');
+
+.terra-bg-image{
+   background-image: url('../../assets/image/terra-laptop.png');
+}
