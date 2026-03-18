@@ -1,176 +1,112 @@
 // ABOUTME: Reusable menu component that generates the navigation menu dynamically.
-// ABOUTME: Handles menu open/close animations using GSAP and manages social links.
+// ABOUTME: Handles menu open/close animations using GSAP and manages interactions.
 
-(function() {
+(function () {
     'use strict';
 
-    // Configuration
-    // const SOCIAL_LINKS = {
-    //     linkedin: 'https://www.linkedin.com/in/eszterbial',
-    //     behance: 'https://www.behance.net/eszterbial',
-    //     instagram: 'https://www.instagram.com/eszterbial/'
-    // };
-
-    // Detect if we're in a subdirectory (e.g., /projects/)
     function getBasePath() {
         const path = window.location.pathname;
-        if (path.includes('/projects/')) {
-            return '../';
-        }
+        if (path.includes('/projects/')) return '../';
         return '';
     }
 
-    // Check if mobile viewport
-    function isMobile() {
-        return window.innerWidth <= 768;
-    }
-
-    // Generate menu HTML
     function createMenuHTML() {
         const basePath = getBasePath();
-
-        // Theme toggle HTML for mobile menu
-        const themeToggleHTML = `
-        `;
 
         return `
             <div class="menu-btn" id="menuBtn">MENU</div>
             <div class="menu-card" id="menuCard">
                 <div class="menu-close-btn" id="closeBtn">
-                    <svg width="60" height="20" viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L59 19" stroke="black" stroke-width="1"/>
-                        <path d="M59 1L1 19" stroke="black" stroke-width="1"/>
+                    <svg width="60" height="20" viewBox="0 0 60 20">
+                        <path d="M1 1L59 19" stroke="black"/>
+                        <path d="M59 1L1 19" stroke="black"/>
                     </svg>
                 </div>
+
                 <nav class="menu-items">
                     <a href="${basePath}index.html" class="menu-link"><div class="menu-link-inner">HOME</div></a>
                     <a href="${basePath}about.html" class="menu-link"><div class="menu-link-inner">ABOUT</div></a>
                     <a href="${basePath}works.html" class="menu-link"><div class="menu-link-inner">WORK</div></a>
                     <a href="${basePath}contact.html" class="menu-link"><div class="menu-link-inner">CONTACT</div></a>
-                    ${themeToggleHTML}
                 </nav>
+
                 <div class="menu-separator"></div>
             </div>
         `;
     }
 
-    // Initialize menu in container
     function initMenu() {
-        const menuContainer = document.querySelector('.menu-container');
-        if (!menuContainer) {
-            console.warn('Menu container not found');
-            return;
-        }
+        const container = document.querySelector('.menu-container');
+        if (!container) return;
 
-        // Clear existing content and inject new menu
-        menuContainer.innerHTML = createMenuHTML();
+        container.innerHTML = createMenuHTML();
 
-        // Get elements
         const menuBtn = document.getElementById('menuBtn');
         const menuCard = document.getElementById('menuCard');
         const closeBtn = document.getElementById('closeBtn');
 
-        if (!menuBtn || !menuCard || !closeBtn) {
-            console.error('Menu elements not found after injection');
-            return;
-        }
+        let isMenuOpen = false;
+        let isAnimatingMenu = false;
 
-        const menuLinks = menuCard.querySelectorAll('.menu-link');
-        const menuSeparator = menuCard.querySelector('.menu-separator');
-        const menuFooterLinks = menuCard.querySelectorAll('.social-link');
-        const menuCloseIcon = closeBtn.querySelector('svg');
-
-        // Initialize menu theme toggle
-        initMenuThemeToggle();
-
-        // Set initial state
         gsap.set(menuCard, {
             opacity: 0,
             visibility: 'hidden',
-            scale: 0.95,
-            transformOrigin: "top right",
-            clipPath: "none"
+            scale: 0.95
         });
 
-        // Open menu handler
         function openMenu() {
-            // Reset elements for entrance
+            if (isAnimatingMenu || isMenuOpen) return;
+
+            isAnimatingMenu = true;
+            isMenuOpen = true;
+
             gsap.set(menuCard, {
                 visibility: 'visible',
                 opacity: 0,
                 scale: 0.95
             });
 
-            // Prepare text for "rise up" animation
-            gsap.set('.menu-link-inner', { y: "150%", x: "0%" });
-            gsap.set(menuSeparator, { scaleX: 0, opacity: 1, transformOrigin: "left center" });
-            gsap.set(menuFooterLinks, { y: 20, opacity: 0 });
-            gsap.set(menuCloseIcon, { rotation: -180, opacity: 0 });
+            gsap.set('.menu-link-inner', { y: "150%" });
 
-            const tl = gsap.timeline();
+            const tl = gsap.timeline({
+                onComplete: () => (isAnimatingMenu = false)
+            });
 
-            // 1. Card appears (Fade + Scale)
             tl.to(menuCard, {
                 duration: 0.5,
                 opacity: 1,
                 scale: 1,
                 ease: "power3.out"
             })
-            // 2. Links rise up from below
             .to('.menu-link-inner', {
                 duration: 0.8,
                 y: "0%",
                 stagger: 0.1,
                 ease: "power4.out"
-            }, "-=0.3")
-            // 3. Separator grows
-            .to(menuSeparator, {
-                duration: 0.6,
-                scaleX: 1,
-                ease: "power3.out"
-            }, "-=0.6")
-            // 4. Footer links slide up
-            .to(menuFooterLinks, {
-                duration: 0.6,
-                y: 0,
-                opacity: 1,
-                stagger: 0.05,
-                ease: "power3.out"
-            }, "-=0.5")
-            // 5. Close icon spins in
-            .to(menuCloseIcon, {
-                duration: 0.6,
-                rotation: 0,
-                opacity: 1,
-                ease: "back.out(1.7)"
-            }, "-=0.6");
+            }, "-=0.3");
 
-            // Initialize letter hover after menu opens
             setTimeout(initMenuLetterHover, 100);
         }
 
-        // Close menu handler
         function closeMenu() {
+            if (isAnimatingMenu || !isMenuOpen) return;
+
+            isAnimatingMenu = true;
+            isMenuOpen = false;
+
             const tl = gsap.timeline({
                 onComplete: () => {
                     gsap.set(menuCard, { visibility: 'hidden' });
+                    isAnimatingMenu = false;
                 }
             });
 
-            // 1. Links sink down
-            tl.to(menuCard.querySelectorAll('.menu-link-inner'), {
+            tl.to('.menu-link-inner', {
                 duration: 0.4,
                 y: "150%",
                 stagger: 0.05,
                 ease: "power2.in"
             })
-            // 2. Other elements fade out
-            .to([menuSeparator, menuFooterLinks, menuCloseIcon], {
-                duration: 0.3,
-                opacity: 0,
-                ease: "power1.in"
-            }, "-=0.3")
-            // 3. Card fades and scales down
             .to(menuCard, {
                 duration: 0.4,
                 opacity: 0,
@@ -179,250 +115,98 @@
             }, "-=0.2");
         }
 
-        // Event listeners
-        menuBtn.addEventListener('click', openMenu);
-        closeBtn.addEventListener('click', closeMenu);
+        // EVENT LISTENERS
 
-        // Smooth scroll for contact link
-        const contactLink = menuCard.querySelector('a[href="#contact"]');
-        if (contactLink) {
-            contactLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                    closeMenu();
-                    // Wait for menu close animation, then scroll
-                    setTimeout(() => {
-                        if (typeof lenis !== 'undefined') {
-                            lenis.scrollTo(contactSection, {
-                                duration: 1.8,
-                                easing: (t) => 1 - Math.pow(1 - t, 4)
-                            });
-                        } else {
-                            contactSection.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }, 500);
-                }
-            });
-        }
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openMenu();
+        });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
-            const isClickInsideMenu = menuCard.contains(event.target);
-            const isClickOnMenuBtn = menuBtn.contains(event.target);
-            const isMenuVisible = gsap.getProperty(menuCard, "opacity") > 0;
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMenu();
+        });
 
-            if (!isClickInsideMenu && !isClickOnMenuBtn && isMenuVisible) {
+        document.addEventListener('click', (e) => {
+            if (
+                isMenuOpen &&
+                !menuCard.contains(e.target) &&
+                !menuBtn.contains(e.target)
+            ) {
                 closeMenu();
             }
         });
 
-        // Close menu on Escape key
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                const isMenuVisible = gsap.getProperty(menuCard, "opacity") > 0;
-                if (isMenuVisible) {
-                    closeMenu();
-                }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
             }
         });
     }
 
-    // Menu letter stagger hover animation
     function initMenuLetterHover() {
-        const menuLinks = document.querySelectorAll('.menu-link-inner');
+        const links = document.querySelectorAll('.menu-link-inner');
 
-        menuLinks.forEach(link => {
-            // Skip if already initialized
-            if (link.dataset.hoverInitialized) return;
-            link.dataset.hoverInitialized = 'true';
+        links.forEach(link => {
+            if (link.dataset.done) return;
+            link.dataset.done = true;
 
             const text = link.textContent;
             link.textContent = '';
 
-            // Create two rows: original and clone for hover swap
-            const originalRow = document.createElement('span');
-            originalRow.className = 'menu-text-row menu-text-original';
+            const row1 = document.createElement('span');
+            const row2 = document.createElement('span');
 
-            const cloneRow = document.createElement('span');
-            cloneRow.className = 'menu-text-row menu-text-clone';
+            row2.style.position = 'absolute';
+            row2.style.top = '0';
+            row2.style.left = '0';
 
-            // Split text into chars for both rows
             text.split('').forEach(char => {
-                const origChar = document.createElement('span');
-                origChar.className = 'char';
-                origChar.textContent = char === ' ' ? '\u00A0' : char;
-                originalRow.appendChild(origChar);
+                const c1 = document.createElement('span');
+                const c2 = document.createElement('span');
 
-                const cloneChar = document.createElement('span');
-                cloneChar.className = 'char';
-                cloneChar.textContent = char === ' ' ? '\u00A0' : char;
-                cloneRow.appendChild(cloneChar);
+                c1.textContent = char;
+                c2.textContent = char;
+
+                row1.appendChild(c1);
+                row2.appendChild(c2);
             });
 
-            link.appendChild(originalRow);
-            link.appendChild(cloneRow);
+            link.appendChild(row1);
+            link.appendChild(row2);
 
-            // Style the rows
-            link.style.display = 'block';
-            link.style.position = 'relative';
-            link.style.clipPath = 'inset(-20% 0 -20% 0)';
+            gsap.set(row2.children, { yPercent: 120 });
 
-            originalRow.style.display = 'block';
-            cloneRow.style.display = 'block';
-            cloneRow.style.position = 'absolute';
-            cloneRow.style.top = '0';
-            cloneRow.style.left = '0';
+            const parent = link.closest('.menu-link');
 
-            const origChars = originalRow.querySelectorAll('.char');
-            const cloneChars = cloneRow.querySelectorAll('.char');
-
-            // Set initial state - clone chars positioned below
-            gsap.set(cloneChars, { yPercent: 120 });
-
-            const parentLink = link.closest('.menu-link');
-
-            let hoverTl = null;
-            let isHovered = false;
-
-            parentLink.addEventListener('mouseenter', () => {
-                isHovered = true;
-                if (hoverTl) hoverTl.kill();
-
-                hoverTl = gsap.timeline();
-                // Original chars go up
-                hoverTl.to(origChars, {
-                    yPercent: -120,
-                    duration: 0.5,
-                    ease: "power2.out",
-                    stagger: 0.04
-                }, 0);
-                // Clone chars come up to center
-                hoverTl.to(cloneChars, {
-                    yPercent: 0,
-                    duration: 0.5,
-                    ease: "power2.out",
-                    stagger: 0.04
-                }, 0);
+            parent.addEventListener('mouseenter', () => {
+                gsap.to(row1.children, { yPercent: -120, stagger: 0.04 });
+                gsap.to(row2.children, { yPercent: 0, stagger: 0.04 });
             });
 
-            parentLink.addEventListener('mouseleave', () => {
-                isHovered = false;
-
-                // Wait for hover animation to complete before reversing
-                const onComplete = () => {
-                    if (isHovered) return; // User re-entered during wait
-                    if (hoverTl) hoverTl.kill();
-
-                    hoverTl = gsap.timeline();
-                    // Original chars return to center
-                    hoverTl.to(origChars, {
-                        yPercent: 0,
-                        duration: 0.5,
-                        ease: "power2.out",
-                        stagger: 0.04
-                    }, 0);
-                    // Clone chars go back down
-                    hoverTl.to(cloneChars, {
-                        yPercent: 120,
-                        duration: 0.5,
-                        ease: "power2.out",
-                        stagger: 0.04
-                    }, 0);
-                };
-
-                if (hoverTl && hoverTl.isActive()) {
-                    hoverTl.then(onComplete);
-                } else {
-                    onComplete();
-                }
+            parent.addEventListener('mouseleave', () => {
+                gsap.to(row1.children, { yPercent: 0, stagger: 0.04 });
+                gsap.to(row2.children, { yPercent: 120, stagger: 0.04 });
             });
         });
     }
 
-    // Initialize theme toggle in mobile menu
-    function initMenuThemeToggle() {
-        const menuThemeToggle = document.getElementById('menuThemeToggle');
-        if (!menuThemeToggle) return;
-
-        const sunEl = menuThemeToggle.querySelector('.theme-toggle-sun');
-        const moonEl = menuThemeToggle.querySelector('.theme-toggle-moon');
-        const sunSvg = sunEl?.querySelector('svg');
-        const moonSvg = moonEl?.querySelector('svg');
-
-        if (!sunEl || !moonEl || !sunSvg || !moonSvg) return;
-
-        // Set initial visual state based on current theme
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const isDark = currentTheme === 'dark';
-
-        if (isDark) {
-            menuThemeToggle.style.backgroundColor = 'rgba(230, 225, 221, 0.3)';
-            sunEl.style.backgroundColor = 'transparent';
-            moonEl.style.backgroundColor = 'rgba(67, 48, 46, 0.8)';
-            gsap.set(sunSvg, { scale: 0 });
-            gsap.set(moonSvg, { scale: 1 });
-        } else {
-            menuThemeToggle.style.backgroundColor = 'rgba(67, 48, 46, 0.3)';
-            sunEl.style.backgroundColor = 'rgba(230, 225, 221, 0.8)';
-            moonEl.style.backgroundColor = 'transparent';
-            gsap.set(sunSvg, { scale: 1 });
-            gsap.set(moonSvg, { scale: 0 });
-        }
-
-        let isAnimating = false;
-
-        function animateToggle(toDark) {
-            if (isAnimating) return;
-            isAnimating = true;
-
-            const duration = 0.6;
-            const ease = 'power3.inOut';
-
-            if (toDark) {
-                gsap.to(sunEl, { backgroundColor: 'transparent', duration, ease });
-                gsap.to(sunSvg, { scale: 0, rotation: 360, duration: duration * 0.7, ease: 'power4.in' });
-                gsap.to(moonEl, { backgroundColor: 'rgba(67, 48, 46, 0.8)', duration, ease });
-                gsap.to(moonSvg, { scale: 1, rotation: 0, duration, ease: 'elastic.out(1, 0.5)' });
-                gsap.to(menuThemeToggle, { backgroundColor: 'rgba(230, 225, 221, 0.3)', duration, ease, onComplete: () => { isAnimating = false; } });
-            } else {
-                gsap.to(moonEl, { backgroundColor: 'transparent', duration, ease });
-                gsap.to(moonSvg, { scale: 0, rotation: 180, duration: duration * 0.7, ease: 'power4.in' });
-                gsap.to(sunEl, { backgroundColor: 'rgba(230, 225, 221, 0.8)', duration, ease });
-                gsap.to(sunSvg, { scale: 1, rotation: 0, duration, ease: 'elastic.out(1, 0.5)' });
-                gsap.to(menuThemeToggle, { backgroundColor: 'rgba(67, 48, 46, 0.3)', duration, ease, onComplete: () => { isAnimating = false; } });
-            }
-        }
-
-        menuThemeToggle.addEventListener('click', () => {
-            if (isAnimating) return;
-
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            animateToggle(newTheme === 'dark');
-            document.documentElement.setAttribute('data-theme', newTheme);
-        });
-    }
-
-    // Initialize when DOM is ready and GSAP is available
-    function safeInitMenu() {
+    function safeInit() {
         if (typeof gsap === 'undefined') {
-            setTimeout(safeInitMenu, 50);
+            setTimeout(safeInit, 50);
             return;
         }
         initMenu();
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', safeInitMenu);
+        document.addEventListener('DOMContentLoaded', safeInit);
     } else {
-        safeInitMenu();
+        safeInit();
     }
 
-    // Export for external use if needed
     window.MenuComponent = {
-        init: initMenu,
-        socialLinks: SOCIAL_LINKS
+        init: initMenu
     };
+
 })();
